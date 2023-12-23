@@ -1,4 +1,6 @@
 class Api::UsersController < ApplicationController
+  # 解決 CSRF 問題
+  protect_from_forgery with: :null_session
 
   # 註冊函式
   def register

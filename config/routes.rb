@@ -11,6 +11,10 @@
 
 Rails.application.routes.draw do
   namespace :api do
+    # 使用者註冊路由
+    post 'register', to: 'users#register'
+
+    # 留言板路由
     get 'messages', to: 'messages#index'
     get 'messages/:id', to: 'messages#show'
     post 'messages', to: 'messages#create'
