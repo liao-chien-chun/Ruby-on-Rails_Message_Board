@@ -4,8 +4,7 @@ class CreateMessages < ActiveRecord::Migration[7.1]
       t.string :title
       t.text :content
       t.datetime :created_time
-
-      t.timestamps
+      t.datetime :updated_time, null: true
     end
   end
 end

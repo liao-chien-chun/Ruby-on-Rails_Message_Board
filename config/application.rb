@@ -22,6 +22,7 @@ module MessageBoard
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = 'Asia/Taipei' # 設置你所在的時區
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

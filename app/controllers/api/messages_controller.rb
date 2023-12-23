@@ -1,6 +1,7 @@
 module Api
   class Api::MessagesController < ApplicationController
     before_action :set_message, only: [:show, :update, :destroy]
+    protect_from_forgery with: :null_session
 
     # index 列出所有留言
     def index
@@ -11,11 +12,12 @@ module Api
     # show 列出單個留言
     def show
       render json: @message
+    end
 
     # create 建立留言
     def create
       @message = Message.new(message_params)
-      @message.created_time = Time.current # 設定為當前時間
+
       if @message.save
         render json: @message, status: :created
       else
@@ -26,6 +28,8 @@ module Api
     # update 更新留言
     def update
       if @message.update(message_params)
+        # 更新成功，設定 updated_time 為現在時間
+        @message.update(updated_time: Time.current)
         render json: @message
       else
         render json: @message.errors, status: :unprocessable_entity
@@ -45,7 +49,7 @@ module Api
     end
     # 取得參數
     def message_params
-      params.require(:message).permit(:title, :content)
+      params.permit(:title, :content)
     end
 
   end
