@@ -5,7 +5,7 @@ module Api
 
     # index 列出所有留言
     def index
-      @message = Message.all
+      @messages = Message.all
       render json: @messages
     end 
 
