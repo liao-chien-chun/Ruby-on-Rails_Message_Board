@@ -38,8 +38,11 @@ module Api
 
     # destroy 刪除留言
     def destroy
-      @message.destroy
-      head :no_content
+      if @message.destroy
+        render json: { message: '刪除成功' }, status: :ok
+      else
+        render json: { error: '無法刪除留言' }, status: :unprocessable_entity
+      end
     end
 
     private
