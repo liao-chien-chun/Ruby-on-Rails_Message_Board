@@ -1,24 +1,36 @@
-# README
+# Ruby on Rails 簡易 API 練習 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 簡介
 
-Things you may want to cover:
+第一次寫 Ruby on Rails 先用簡易的API 來了解這個框架如何使用
 
-* Ruby version
+## 安裝
 
-* System dependencies
+使用以下步驟安裝：
 
-* Configuration
+1. Clone 這個存儲庫：`git clone https://github.com/liao-chien-chun/Ruby-on-Rails_Message_Board.git`
+2. 進入項目文件夾：`cd your-project-path`
+3. 安裝依賴：`bundle install`
 
-* Database creation
+## 使用
 
-* Database initialization
+啟動伺服器
 
-* How to run the test suite
+```bash
+$ rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### 目前功能介紹
+使用者註冊
+POST /api/register
 
-* Deployment instructions
-
-* ...
+取得所有留言
+GET /api/messages
+新增留言
+POST /api/messages
+取得單一留言
+GET /api/messages/:id
+更新留言
+PATCH /api/messages/:id
+刪除留言
+DELETE /api/messages/:id
