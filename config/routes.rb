@@ -11,6 +11,10 @@
 
 Rails.application.routes.draw do
   namespace :api do
-    resources :messages
+    get 'messages', to: 'messages#index'
+    get 'messages/:id', to: 'messages#show'
+    post 'messages', to: 'messages#create'
+    patch 'messages/:id', to: 'messages#update'
+    delete 'messages/:id', to: 'messages#destroy'
   end
 end
