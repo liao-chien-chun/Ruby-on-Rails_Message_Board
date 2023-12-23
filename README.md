@@ -21,16 +21,14 @@ $ rails server
 ```
 
 ### 目前功能介紹
-使用者註冊
-POST /api/register
+使用者註冊 POST /api/register
 
-取得所有留言
-GET /api/messages
-新增留言
-POST /api/messages
-取得單一留言
-GET /api/messages/:id
-更新留言
-PATCH /api/messages/:id
-刪除留言
-DELETE /api/messages/:id
+取得所有留言 GET /api/messages
+  
+新增留言 POST /api/messages  
+  
+取得單一留言 GET /api/messages/:id
+  
+更新留言 PATCH /api/messages/:id
+  
+刪除留言 DELETE /api/messages/:id
