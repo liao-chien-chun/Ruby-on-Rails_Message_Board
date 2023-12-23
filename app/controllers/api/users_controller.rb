@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
     # 對密碼進行雜湊
     encrypted_pwd = encrypt_password(user_params[:pwd])
     # 新增 user 實體
-    @user = User.new(user_params.except(:pwd, :checkPwd).merge(pwd: encrypt_password))
+    @user = User.new(user_params.except(:pwd, :checkPwd).merge(pwd: encrypted_pwd))
 
     # 成功
     if @user.save
